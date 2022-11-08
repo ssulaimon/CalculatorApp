@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+// all operation enum
 enum Sum {
   addition,
   subtraction,
@@ -16,6 +17,8 @@ class CalculatorFunction extends GetxController {
   final sum = Rxn<Sum>();
   final emptyValue = Rxn<String>();
 
+  //setting first value of the operation
+
   void setValue({required String number}) {
     if (value == '') {
       value(number);
@@ -23,6 +26,7 @@ class CalculatorFunction extends GetxController {
       value(value + number);
     }
   }
+  //setting the operation type
 
   void setSum({required Sum summation}) {
     // ignore: deprecated_member_use
@@ -38,6 +42,7 @@ class CalculatorFunction extends GetxController {
     }
   }
 
+//set second number of operation and getting result
   void result({required String number}) {
     // ignore: deprecated_member_use
     if (firstNumber == '') {
@@ -62,6 +67,7 @@ class CalculatorFunction extends GetxController {
       }
     }
   }
+  //set numbers to zero
 
   void delete() {
     value('');
