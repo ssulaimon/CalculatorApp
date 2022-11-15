@@ -1,4 +1,5 @@
 import 'package:calculator/controller/calculation.dart';
+import 'package:calculator/screens/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,10 +8,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var style = const TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 20.0,
-    );
     final calculationController = Get.put(
       CalculatorFunction(),
     );
@@ -52,51 +49,15 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '1');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '1',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '2');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '2',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '3');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '3',
-                          style: style,
-                        )),
-                      ),
-                    )
+                    ContanierButton(
+                        function: () => value.setValue(number: '1'),
+                        buttonValue: '1'),
+                    ContanierButton(
+                        function: () => value.setValue(number: '2'),
+                        buttonValue: '2'),
+                    ContanierButton(
+                        function: () => value.setValue(number: '3'),
+                        buttonValue: '3'),
                   ],
                 ),
                 const SizedBox(
@@ -105,51 +66,15 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '4');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '4',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '5');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '5',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '6');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '6',
-                          style: style,
-                        )),
-                      ),
-                    )
+                    ContanierButton(
+                        function: () => value.setValue(number: '4'),
+                        buttonValue: '4'),
+                    ContanierButton(
+                        function: () => value.setValue(number: '5'),
+                        buttonValue: '5'),
+                    ContanierButton(
+                        function: () => value.setValue(number: '6'),
+                        buttonValue: '6'),
                   ],
                 ),
                 const SizedBox(
@@ -158,52 +83,15 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '7');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                          child: Text(
-                            '7',
-                            style: style,
-                          ),
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '8');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '8',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '9');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '9',
-                          style: style,
-                        )),
-                      ),
-                    )
+                    ContanierButton(
+                        function: () => value.setValue(number: '7'),
+                        buttonValue: '7'),
+                    ContanierButton(
+                        function: () => value.setValue(number: '8'),
+                        buttonValue: '8'),
+                    ContanierButton(
+                        function: () => value.setValue(number: '9'),
+                        buttonValue: '9'),
                   ],
                 ),
                 const SizedBox(
@@ -212,51 +100,22 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        value.setValue(number: '3');
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '0',
-                          style: style,
-                        )),
+                    ContanierButton(
+                      function: () => value.setValue(
+                        number: '0',
                       ),
+                      buttonValue: '0',
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setSum(summation: Sum.multiplication);
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '*',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setSum(summation: Sum.addition);
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '+',
-                          style: style,
-                        )),
-                      ),
-                    )
+                    ContanierButton(
+                        function: () => value.setSum(
+                              summation: Sum.multiplication,
+                            ),
+                        buttonValue: '*'),
+                    ContanierButton(
+                        function: () => value.setSum(
+                              summation: Sum.addition,
+                            ),
+                        buttonValue: '+'),
                   ],
                 ),
                 const SizedBox(
@@ -265,77 +124,37 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        value.setSum(summation: Sum.division);
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          "/",
-                          style: style,
-                        )),
-                      ),
+                    ContanierButton(
+                        function: () => value.setSum(
+                              summation: Sum.division,
+                            ),
+                        buttonValue: '/'),
+                    ContanierButton(
+                        function: () => value.setSum(
+                              summation: Sum.subtraction,
+                            ),
+                        buttonValue: '-'),
+                    ContanierButton(
+                      function: () => value.delete(),
+                      buttonValue: 'DEL',
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        value.setSum(summation: Sum.subtraction);
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          '-',
-                          style: style,
-                        )),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        value.delete();
-                      },
-                      child: Container(
-                        height: 70,
-                        width: 100,
-                        color: Colors.grey,
-                        child: Center(
-                            child: Text(
-                          'DEL',
-                          style: style,
-                        )),
-                      ),
-                    )
                   ],
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    value.result(number: value.value.value);
-                  },
-                  child: Container(
-                    height: 70,
-                    width: 100,
-                    color: Colors.grey,
-                    child: Center(
-                        child: Text(
-                      '=',
-                      style: style,
-                    )),
+                ContanierButton(
+                  function: () => value.result(
+                    number: value.value.value,
                   ),
+                  buttonValue: '=',
                 ),
               ],
             ),
           );
         }),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
     );
   }
 }
